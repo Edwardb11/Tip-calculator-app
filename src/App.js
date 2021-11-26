@@ -1,10 +1,10 @@
 import React from "react";
-import Example from "./componets/Box";
+import Box from "./componets/box/Box";
 import './index.css';
 function App() {
   return (
     <>
-     <Example></Example>
+     <Box></Box>
     </>
   );
 }
