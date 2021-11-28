@@ -69,14 +69,14 @@ export default function Box() {
                   Tip Amount
                   <span className="flex text-gray-400 "> / person </span>
                   <h2 className="text-right text-3xl text-gray-400">
-                    {TipAmount != -1 ? TipAmount.toFixed(2) : 0}
+                    {isNaN(TipAmount) ? 0 : TipAmount.toFixed(2)}
                   </h2>
                 </div>
                 <div className="text-white my-1 mb-5">
                   Total
                   <span className="flex text-gray-400 "> / person </span>
                   <h2 className="text-right text-3xl text-gray-400">
-                    {typeof total != -1 ? total.toFixed(2) : 0}
+                    {isNaN(total) ? 0 : total.toFixed(2)}
                   </h2>
                 </div>
                 <button className="bg-gray-500 w-full tex-gray-300   py-2 px-8 border border-transparent text-sm font-medium rounded-md text-white hover:bg-gray-300  hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
