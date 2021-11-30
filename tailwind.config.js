@@ -38,7 +38,9 @@ module.exports = {
           strong: "hsl(172, 67%, 45%)",
           dark: "hsl(183, 100%, 15%)",
           dark_gray: "hsl(186, 14%, 43%)",
-          light_gray: "hsl(185, 41%, 84%)",
+          light_gray: "hsl(189, 41%, 97%)",
+          light_gray_f: "hsl(185, 41%, 84%)",
+          
         },
       },
       outline: {
