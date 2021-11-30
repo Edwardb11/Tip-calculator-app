@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "../button/Button";
-// import { ReactComponent as Logo } from "../../images/logo.svg";
+import { ReactComponent as Logo } from "../../images/logo.svg";
 import { ReactComponent as DollarIcon } from "../../images/icon-dollar.svg";
 import { ReactComponent as PersonIcon } from "../../images/icon-person.svg";
 
@@ -14,10 +14,10 @@ export default function Box() {
 
   return (
     <>
-      <div className="min-h-screen flex items-center justify-center py-10  bg-cyan-light_gray_f font-black">
-        {/* <div className=" max-w-1/2">
-          <Logo className="mx-auto" />
-        </div> */}
+      <header className="w-full py-10  bg-cyan-light_gray_f">
+        <Logo className="mx-auto" />
+      </header>
+      <div className="min-h-screen flex items-center justify-center py-12  bg-cyan-light_gray_f font-black">
         <div className="min-w-screen flex flex-auto container bg-white shadow-2xl rounded-3xl max-w-1/2  2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-fullmd:max-w-full sm:max-w-full  ">
           <form>
             <div className="flex flex-wrap px-10 py-12 rounded  text-black">
@@ -33,14 +33,14 @@ export default function Box() {
                   <input
                     id="bill"
                     name="bill"
-                    type="text"
+                    type="number"
                     step="any"
                     value={bill}
                     min="1"
                     onChange={(e) => setBill(e.target.value)}
                     required
                     placeholder="0"
-                    className="appearance-none text-right  rounded-md block w-full px-3 py-2 mb-7 text-black bg-cyan-light_gray  "
+                    className="appearance-none text-right focus:outline-none focus:ring-4 focus:ring-cyan-light_gray_f  font-blackfocus:border-transparent rounded-md block w-full px-3 py-2 mb-7 text-black bg-cyan-light_gray  "
                   />
                 </div>
                 <span className="block text-cyan-dark_gray font-semibold mb-2">
@@ -60,7 +60,7 @@ export default function Box() {
                     max="100"
                     value={Tip}
                     onChange={(e) => setTip(e.target.value)}
-                    className=" group relative md:w-1/4 w-1/4 mx-2 my-1 py-2 px-1 font-black  border-transparent rounded-md text-black text-right  bg-cyan-light_gray   hover:bg-white placeholder-cyan-dark "
+                    className=" group relative md:w-1/4 w-1/4 mx-2 my-1 py-2 px-1 font-black focus:outline-none focus:ring-4 focus:ring-cyan-light_gray_f   border-transparent rounded-md text-black text-right  bg-cyan-light_gray   hover:bg-white placeholder-cyan-dark "
                     placeholder="Custom"
                   />
                 </div>
@@ -82,7 +82,7 @@ export default function Box() {
                     onChange={(e) => setPeople(e.target.value)}
                     required
                     placeholder="0"
-                    className="appearance-none text-right rounded-none block w-full px-3 py-2 mb-7 border font-black text-black border-gray-300 bg-cyan-light_gray  rounded-b-md"
+                    className="appearance-none text-right rounded-md block w-full px-3 py-2 mb-7 border font-black focus:outline-none focus:ring-4 focus:ring-cyan-light_gray_f  text-black border-gray-300 bg-cyan-light_gray"
                   />
                 </div>
               </div>
@@ -103,7 +103,7 @@ export default function Box() {
                   </div>
                 </div>
                 <br /> <br /> <br />
-                <button className="bg-cyan-strong w-full  ppercase  mt-8 md:mt-0   py-2 px-4  border border-transparent rounded-md font-bold text-white hover:bg-cyan-strong hover:text-cyan-dark uppercase">
+                <button className="bg-cyan-strong w-full  ppercase  mt-8 md:mt-0   py-2 px-4  border border-transparent rounded-md font-bold text-cyan-dark  hover:text-cyan-dark hover:bg-cyan-light_gray_f  uppercase">
                   reset
                 </button>
               </div>
