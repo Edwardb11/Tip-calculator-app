@@ -39,7 +39,7 @@ export default function Box() {
                     min="1"
                     onChange={(e) => setBill(e.target.value)}
                     required
-                    className="text-right focus:outline-none focus:ring-4 focus:ring-cyan-light_gray_f  font-blackfocus:border-transparent rounded-md block w-full px-3 py-2 mb-7 text-black bg-cyan-light_gray appearance-none "
+                    className="text-right focus:outline-none focus:ring-4 focus:ring-cyan-light_gray_f  font-black focus:border-transparent rounded-md block w-full px-3 py-2 mb-7 text-black bg-cyan-light_gray  "
                     placeholder="0"
                   />
                 </div>
@@ -81,8 +81,8 @@ export default function Box() {
                     value={people}
                     onChange={(e) => setPeople(e.target.value)}
                     required
-                    placeholder="0"
-                    className="appearance-none text-right rounded-md block w-full px-3 py-2 mb-7 border font-black focus:outline-none focus:ring-4 focus:ring-cyan-light_gray_f  text-black border-gray-300 bg-cyan-light_gray"
+                    placeholder="1"
+                    className="text-right rounded-md block w-full px-3 py-2 mb-7 border font-black focus:outline-none focus:ring-4 focus:ring-cyan-light_gray_f  text-black  bg-cyan-light_gray   hover:bg-white  "
                   />
                 </div>
               </div>
