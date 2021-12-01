@@ -14,9 +14,9 @@ export default function Box() {
 
   return (
     <>
-      <header className="w-full py-10  bg-cyan-light_gray_f">
-        <Logo className="mx-auto" />
-      </header>
+      <div className="w-full relative py-3 bg-cyan-light_gray_f">
+        <Logo className="mx-auto absolute inset-x-0 top-2 " />
+      </div>
       <div className="min-h-screen flex items-center justify-center py-12  bg-cyan-light_gray_f font-black">
         <div className="min-w-screen flex flex-auto container bg-white shadow-2xl rounded-3xl max-w-1/2  2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-fullmd:max-w-full sm:max-w-full  ">
           <form>
@@ -39,8 +39,8 @@ export default function Box() {
                     min="1"
                     onChange={(e) => setBill(e.target.value)}
                     required
+                    className="text-right focus:outline-none focus:ring-4 focus:ring-cyan-light_gray_f  font-blackfocus:border-transparent rounded-md block w-full px-3 py-2 mb-7 text-black bg-cyan-light_gray appearance-none "
                     placeholder="0"
-                    className="appearance-none text-right focus:outline-none focus:ring-4 focus:ring-cyan-light_gray_f  font-blackfocus:border-transparent rounded-md block w-full px-3 py-2 mb-7 text-black bg-cyan-light_gray  "
                   />
                 </div>
                 <span className="block text-cyan-dark_gray font-semibold mb-2">
@@ -103,6 +103,7 @@ export default function Box() {
                   </div>
                 </div>
                 <br /> <br /> <br />
+                <br />
                 <button className="bg-cyan-strong w-full  ppercase  mt-8 md:mt-0   py-2 px-4  border border-transparent rounded-md font-bold text-cyan-dark  hover:text-cyan-dark hover:bg-cyan-light_gray_f  uppercase">
                   reset
                 </button>
