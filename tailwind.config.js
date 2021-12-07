@@ -37,14 +37,12 @@ module.exports = {
         cyan: {
           strong: "hsl(172, 67%, 45%)",
           dark: "hsl(183, 100%, 15%)",
-          dark_gray: "hsl(186, 14%, 43%)",
+          dark_btn: "hsl(183, 60%, 25%)",
+          dark_gray: "hsl(184, 14%, 56%)",
           light_gray: "hsl(189, 41%, 97%)",
           light_gray_f: "hsl(185, 41%, 84%)",
           
         },
-      },
-      outline: {
-        cyan: "2px solid hsl(172, 67%, 45%)",
       },
     },
   },
