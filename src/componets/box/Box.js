@@ -20,14 +20,16 @@ export default function Box() {
     setShowCustom(false);
   };
   return (
+    
+    //   sm:max-w-full md:max-w-full  lg:max-w-full xl:max-w-1/2 2xl:max-w-1/2 
     <div className="min-h-screen bg-cyan-light_gray_f py-10">
       <header className="w-full py-12">
         <Logo className="mx-auto" />
       </header>
       <main>
-        <div className="flex  flex-auto justify-center py-12  font-black">
-          <div className=" flex flex-wrap  bg-white shadow-2xl px-10 py-12 rounded-3xl max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full   ">
-              <div className="flex-auto  max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full text-gray-600">
+        <div className=" flex justify-center font-black">
+        <div className="flex flex-wrap px-7 py-7  rounded-3xl  shadow-lg bg-white  text-black max-w-1/2   2xl:max-w-1/2 xl:max-w-1/2  lg:max-w-full  md:max-w-full sm:max-w-full">
+              <div className="flex-auto mx-auto  max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2  lg:max-w-full  md:max-w-full sm:max-w-full">
                 <label
                   for="bill"
                   className="block text-cyan-dark_gray font-semibold mb-2"
@@ -45,7 +47,7 @@ export default function Box() {
                     min="1"
                     onChange={(e) => setBill(e.target.value)}
                     required
-                    className="text-right focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-black focus:border-transparent rounded-md block w-full px-3 py-2 mb-7 text-black bg-cyan-light_gray  "
+                    className="text-right focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block w-full px-3 py-2 mb-7 text-black bg-cyan-light_gray  "
                     placeholder="0"
                   />
                 </div>
@@ -62,13 +64,13 @@ export default function Box() {
                     <input
                       type="number"
                       placeholder="Custom"
-                      className=" group relative md:w-1/4 w-1/4 mx-2 my-1 text-2xl py-2 px-1 font-black focus:outline-none focus:ring-2 focus:ring-cyan-dark     border-transparent rounded-md text-right  bg-cyan-light_gray   hover:bg-white placeholder-cyan-dark"
+                      className="group relative md:w-1/4 w-1/4 mx-2 my-1 text-2xl py-2  px-2  font-black focus:outline-none focus:ring-2 focus:ring-cyan-dark  border-transparent rounded-md text-black text-right  bg-cyan-light_gray   hover:bg-white placeholder-cyan-dark "
                       onChange={(e) => setTip(e.target.value)}
                     />
                   ) : (
-                    <button
-                      className=" group relative md:w-1/4 w-1/4 mx-2 my-1 text-2xl py-2 px-1 font-black focus:outline-none focus:ring-2 focus:ring-cyan-dark     border-transparent rounded-md  text-right  bg-cyan-light_gray   hover:bg-white placeholder-cyan-dark"
-                      onClick={() => setShowCustom(true)}
+                    <button 
+                    className=" group relative md:w-1/4 w-1/4 mx-2 my-1 text-2xl  px-3 py-2 mb-1 font-semibold focus:outline-none focus:ring-2 focus:ring-cyan-dark     border-transparent rounded-md text-right  bg-cyan-light_gray   hover:bg-white placeholder-cyan-dark"
+                    onClick={() => setShowCustom(true)}
                     >
                       Custom
                     </button>
@@ -96,7 +98,7 @@ export default function Box() {
                   />
                 </div>
               </div>
-              <div className="flex-auto  max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full rounded-3xl px-8 py-12 my-1 mb-5 m-2 bg-cyan-dark ">
+              <div className="flex-auto  mx-auto  max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full rounded-3xl px-8 py-12 my-1 mb-5 m-2 bg-cyan-dark ">
                 <div className="flex flex-col ">
                   <div className="flex justify-between items-center">
                     <div className="text-cyan-light_gray font-semibold py-5">
@@ -127,6 +129,7 @@ export default function Box() {
                   reset
                 </button>
               </div>
+              
             </div>
           </div>
       </main>
