@@ -25,8 +25,8 @@ export default function Box() {
       </header>
       <main>
         <div className=" flex justify-center font-black">
-          <div className="flex flex-wrap px-7 py-7  rounded-3xl  shadow-lg bg-white  text-black max-w-1/2   2xl:max-w-1/2 xl:max-w-1/2  lg:max-w-1/2 md:max-w-full sm:max-w-full">
-            <div className="flex-auto mx-auto  max-w-1/2 2xl:max-w-1/2 xl:max-w-full lg:max-w-full  md:max-w-full sm:max-w-full">
+          <div className="flex flex-wrap px-7 py-7  rounded-3xl  shadow-lg bg-white  text-black max-w-1/2   2xl:max-w-1/2 xl:max-w-1/2  lg:max-w-1/2 md:max-w-3/4 sm:max-w-full">
+            <div className="justify-items-stretch flex-auto mx-auto  max-w-1/2 2xl:max-w-1/2 xl:max-w-full lg:max-w-full  md:max-w-full sm:max-w-full">
               <label
                 for="bill"
                 className="block text-cyan-dark_gray font-semibold mb-2"
@@ -51,7 +51,7 @@ export default function Box() {
               <span className="block text-cyan-dark_gray font-semibold mb-2">
                 Select Tip %
               </span>
-              <div className="flex flex-wrap flex-auto mb-7">
+              <div className="flex flex-wrap flex-auto mb-7  md:justify-start sm:justify-center ">
                 <Button onClik={() => setTip(5)} newContent={5}></Button>
                 <Button onClik={() => setTip(10)} newContent={10}></Button>
                 <Button onClik={() => setTip(15)} newContent={15}></Button>
@@ -66,7 +66,7 @@ export default function Box() {
                     max="100"
                     value={Tip}
                     onChange={(e) => setTip(e.target.value)}
-                    className=" group relative md:w-1/4 w-1/4 mx-2 my-1 py-2 px-4 text-right focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block text-black bg-cyan-light_gray "
+                    className=" group relative  w-1/4 mx-2 my-2 py-2 px-1  sm:w-2/5 text-right focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block text-black bg-cyan-light_gray "
                     placeholder="Custom"
                   />
               </div>
@@ -92,7 +92,7 @@ export default function Box() {
                 />
               </div>
             </div>
-            <div className="flex-auto  mx-auto  max-w-1/2 2xl:max-w-1/2 xl:max-w-full lg:max-w-full md:max-w-full sm:max-w-full rounded-3xl px-8 py-12 my-1 mb-5 m-2 bg-cyan-dark ">
+            <div className="justify-items-stretch flex-auto  mx-auto  max-w-1/2 2xl:max-w-1/2 xl:max-w-full lg:max-w-full md:max-w-full sm:max-w-full rounded-3xl px-8 py-12 my-1 mb-5 m-2 bg-cyan-dark ">
               <div className="flex flex-col ">
                 <div className="flex justify-between items-center">
                   <div className="text-cyan-light_gray font-semibold py-5">
