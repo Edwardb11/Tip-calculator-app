@@ -7,7 +7,7 @@ export function Button({  newContent, onClik }) {
       <button
         onClick={onClik}
         type="button"
-        className="text-center group relative md:w-1/4 w-1/4 mx-2 my-2 py-2 px-8 mb-2 m-8  border-transparent font-black rounded-md bg-cyan-dark text-white hover:bg-cyan-strong hover:text-cyan-dark focus:bg-cyan-strong focus:text-cyan-dark "
+        className="text-center group relative text-2xl mx-2 my-2 py-2 px-1  w-1/4 sm:w-2/5 border-transparent font-black rounded-md bg-cyan-dark text-white hover:bg-cyan-strong hover:text-cyan-dark focus:bg-cyan-strong focus:text-cyan-dark "
       >
         {"%" + newContent}
       </button>  );
