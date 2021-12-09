@@ -17,6 +17,7 @@ export default function Box() {
     setTip("");
     setPeople("");
   };
+
   return (
     //   sm:max-w-full md:max-w-full  lg:max-w-full xl:max-w-1/2 2xl:max-w-1/2
     <div className="min-h-screen bg-cyan-light_gray_f py-10">
@@ -25,8 +26,8 @@ export default function Box() {
       </header>
       <main>
         <div className=" flex justify-center font-black">
-          <div className="flex flex-wrap px-7 py-7  rounded-3xl  shadow-lg bg-white   text-black max-w-1/2   2xl:max-w-3/4 xl:max-w-3/4  lg:max-w-3/4 md:max-w-3/4 sm:max-w-full">
-            <div className="justify-items-stretch flex-auto  mx-auto  px-5  max-w-1/2 2xl:max-w-3/4 xl:max-w-1/2 lg:max-w-full   md:max-w-full sm:max-w-full">
+          <div className="flex flex-auto flex-wrap px-7 py-7  rounded-3xl  shadow-lg bg-white  text-black     max-w-1/2  2xl:max-w-3/4 xl:max-w-3/4 lg:max-w-3/4 md:max-w-3/4 sm:max-w-full">
+            <div className="justify-items-stretch flex-auto   mx-2 px-3  max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full   md:max-w-full sm:max-w-full">
               <label
                 for="bill"
                 className="block text-cyan-dark_gray font-semibold mb-2"
@@ -44,7 +45,7 @@ export default function Box() {
                   min="1"
                   onChange={(e) => setBill(e.target.value)}
                   required
-                  className="text-right focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block w-full px-3 py-2 mb-7 text-black bg-cyan-light_gray  "
+                  className="text-right group relative focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block w-full px-3 py-2 mb-7 text-black bg-cyan-light_gray  "
                   placeholder="0"
                 />
               </div>
@@ -63,7 +64,6 @@ export default function Box() {
                     name="tip"
                     type="number"
                     min="1"
-                    max="100"
                     value={Tip}
                     onChange={(e) => setTip(e.target.value)}
                     className=" group relative  w-1/4 mx-2 my-2 py-2 px-1  sm:w-2/5 text-right focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block text-black bg-cyan-light_gray "
@@ -88,11 +88,11 @@ export default function Box() {
                   onChange={(e) => setPeople(e.target.value)}
                   required
                   placeholder="1"
-                  className="text-right rounded-md block w-full text-2xl px-3 py-2 mb-7 border font-black focus:outline-none focus:ring-2 focus:ring-cyan-dark    text-black  bg-cyan-light_gray   hover:bg-white  "
+                  className=" group relative  text-right rounded-md block w-full text-2xl px-3 py-2 mb-7 border font-black focus:outline-none focus:ring-2 focus:ring-cyan-dark    text-black  bg-cyan-light_gray   hover:bg-white  "
                 />
               </div>
             </div>
-            <div className="justify-items-stretch flex-auto  mx-auto   max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full rounded-3xl  px-5 py-12 bg-cyan-dark ">
+            <div className="justify-items-stretch flex-auto     max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full rounded-3xl  px-5 py-12 mx-2 bg-cyan-dark ">
               <div className="flex flex-col ">
                 <div className="flex justify-between items-center">
                   <div className="text-cyan-light_gray font-semibold my-6">
