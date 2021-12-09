@@ -25,8 +25,8 @@ export default function Box() {
       </header>
       <main>
         <div className=" flex justify-center font-black">
-          <div className="flex flex-wrap px-7 py-7  rounded-3xl  shadow-lg bg-white  text-black max-w-3/4   2xl:max-w-1/2 xl:max-w-1/2  lg:max-w-1/2 md:max-w-3/4 sm:max-w-full">
-            <div className="justify-items-stretch flex-auto mx-auto  px-5 max-w-1/2 2xl:max-w-1/2 xl:max-w-full lg:max-w-full   md:max-w-full sm:max-w-full">
+          <div className="flex flex-wrap px-7 py-7  rounded-3xl  shadow-lg bg-white   text-black max-w-1/2   2xl:max-w-3/4 xl:max-w-3/4  lg:max-w-3/4 md:max-w-3/4 sm:max-w-full">
+            <div className="justify-items-stretch flex-auto  mx-auto  px-5  max-w-1/2 2xl:max-w-3/4 xl:max-w-1/2 lg:max-w-full   md:max-w-full sm:max-w-full">
               <label
                 for="bill"
                 className="block text-cyan-dark_gray font-semibold mb-2"
@@ -92,20 +92,19 @@ export default function Box() {
                 />
               </div>
             </div>
-            <div className="justify-items-stretch flex-auto  mx-auto  max-w-1/2 2xl:max-w-1/2 xl:max-w-full lg:max-w-full md:max-w-full sm:max-w-full rounded-3xl  px-5 py-12 my-1 mb-5 m-2 bg-cyan-dark ">
+            <div className="justify-items-stretch flex-auto  mx-auto   max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full rounded-3xl  px-5 py-12 bg-cyan-dark ">
               <div className="flex flex-col ">
                 <div className="flex justify-between items-center">
-                  <div className="text-cyan-light_gray font-semibold py-5">
+                  <div className="text-cyan-light_gray font-semibold my-6">
                     Tip Amount
                     <span className="block text-cyan-dark_gray">/person</span>
                   </div>
                   <div className="text-cyan-strong text-5xl  font-bold">
-                    $
-                    {isNaN(TipAmount) ? (0.0).toFixed(2) : TipAmount.toFixed(2)}
+                    ${isNaN(TipAmount) ? (0.0).toFixed(2) : TipAmount.toFixed(2)}
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
-                  <div className="font-semibold text-cyan-light_gray py-6">
+                  <div className="font-semibold text-cyan-light_gray my-4">
                     Total
                     <span className="block text-cyan-dark_gray">/person</span>
                   </div>
