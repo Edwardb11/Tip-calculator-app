@@ -35,7 +35,7 @@ export default function Box() {
                 Bill
               </label>
               <div className="bg-cyan-light_gray relative">
-                <DollarIcon className="absolute top-2.5 left-3" />
+                <DollarIcon className="absolute top-2.5 left-3 z-10" />
                 <input
                   id="bill"
                   name="bill"
@@ -77,7 +77,7 @@ export default function Box() {
                 Number of People
               </label>
               <div className="bg-cyan-light_gray  relative">
-                <PersonIcon className="absolute top-2.5 left-3" />
+                <PersonIcon className="absolute top-2.5 left-3 z-10" />
                 <input
                   id="people"
                   name="people"
