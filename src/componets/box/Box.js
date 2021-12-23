@@ -66,7 +66,7 @@ export default function Box() {
                     min="1"
                     value={Tip}
                     onChange={(e) => setTip(e.target.value)}
-                    className=" group relative  w-1/4 mx-2 my-2 py-2 px-1  sm:w-2/5 text-right focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block text-black bg-cyan-light_gray "
+                    className=" group relative  w-1/4 mx-2 my-2 py-2 px-1  sm:w-2/5 text-center focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block text-black bg-cyan-light_gray "
                     placeholder="Custom"
                   />
               </div>
