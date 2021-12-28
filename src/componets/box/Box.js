@@ -19,10 +19,12 @@ export default function Box() {
   };
 
   return (
-    //   sm:max-w-full md:max-w-full  lg:max-w-full xl:max-w-1/2 2xl:max-w-1/2
     <div className="h-screen bg-cyan-light_gray_f  ">
-      <header className="w-full py-12">
-        <Logo className="mx-auto" />
+      <header className="mx-auto py-12 2xl:py-12 xl:py-12 lg:py-12 md:py-5 sm:py-0">
+        <h1 class="text-cyan-title mx-auto font-semibold  text-center  text-2xl tracking-widest uppercase">
+          spli <br />
+          tter
+        </h1>
       </header>
       <main>
         <div className=" flex justify-center font-black">
@@ -49,10 +51,10 @@ export default function Box() {
                   placeholder="0"
                 />
               </div>
-              <span className="block text-cyan-dark_gray font-semibold ">
+              <span className="block text-cyan-dark_gray font-semibold mb-2 sm:mb-0">
                 Select Tip %
               </span>
-              <div className="flex flex-wrap flex-auto mb-5  sm:-mx-5  md:-mx-1  md:justify-start sm:justify-center ">
+              <div className="flex flex-wrap flex-auto mb-5  sm:-mx-5 sm:mb-1 -mx-1  md:justify-start sm:justify-center ">
                 <Button onClik={() => setTip(5)} newContent={5}></Button>
                 <Button onClik={() => setTip(10)} newContent={10}></Button>
                 <Button onClik={() => setTip(15)} newContent={15}></Button>
@@ -72,7 +74,7 @@ export default function Box() {
               </div>
               <label
                 for="people"
-                className="block text-cyan-dark_gray font-semibold mb-2"
+                className="block text-cyan-dark_gray font-semibold"
               >
                 Number of People
               </label>
@@ -114,10 +116,10 @@ export default function Box() {
                   </div>
                 </div>
               </div>
-              <div className="mt-12 pt-4  2xl:mt-12 xl:mt-12  lg:mt-12 md:mt-0 sm:mt-0">
+              <div className="mt-12 pt-4 2xl:mt-12 xl:mt-12  lg:mt-12 md:mt-0 sm:-mt-8">
                 <button
                   onClick={() => reset()}
-                  className="bg-cyan-dark_btn    w-full  mt-8 md:mt-0 py-2 px-4  border border-transparent rounded-md font-semibold text-cyan-dark  hover:text-cyan-dark hover:bg-cyan-light_gray_f  uppercase"
+                  className="bg-cyan-dark_btn    w-full  mt-12 md:mt-0 py-2 px-4  border border-transparent rounded-md font-semibold text-cyan-dark  hover:text-cyan-dark hover:bg-cyan-light_gray_f  uppercase"
                 >
                   reset
                 </button>

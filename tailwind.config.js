@@ -2,6 +2,13 @@ module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    letterSpacing: {
+      tightest: "-.075em",
+      tighter: "-.05em",
+      normal: "0",
+      wider: ".05em",
+      widest: ".25em",
+    },
     screens: {
       "2xl": { max: "1535px" },
       // => @media (max-width: 1535px) { ... }
@@ -41,11 +48,12 @@ module.exports = {
           dark_gray: "hsl(184, 14%, 56%)",
           light_gray: "hsl(189, 41%, 97%)",
           light_gray_f: "hsl(185, 41%, 84%)",
-          
+          title: "hsl(186, 14%, 43%)",
         },
       },
     },
   },
+
   variants: {
     extend: {},
   },
