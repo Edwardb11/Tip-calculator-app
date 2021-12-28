@@ -114,11 +114,10 @@ export default function Box() {
                   </div>
                 </div>
               </div>
-
-              <div className="  py-10 inset-x-0 bottom-0">
+              <div className="mt-12 pt-4  2xl:mt-12 xl:mt-12  lg:mt-12 md:mt-0 sm:mt-0">
                 <button
                   onClick={() => reset()}
-                  className="bg-cyan-dark_btn     w-full  mt-8 md:mt-0 py-2 px-4  border border-transparent rounded-md font-semibold text-cyan-dark  hover:text-cyan-dark hover:bg-cyan-light_gray_f  uppercase"
+                  className="bg-cyan-dark_btn    w-full  mt-8 md:mt-0 py-2 px-4  border border-transparent rounded-md font-semibold text-cyan-dark  hover:text-cyan-dark hover:bg-cyan-light_gray_f  uppercase"
                 >
                   reset
                 </button>
