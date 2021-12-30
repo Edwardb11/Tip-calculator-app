@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "../button/Button";
-import { ReactComponent as Logo } from "../../images/logo.svg";
 import { ReactComponent as DollarIcon } from "../../images/icon-dollar.svg";
 import { ReactComponent as PersonIcon } from "../../images/icon-person.svg";
 
@@ -8,20 +7,31 @@ export default function Box() {
   const [bill, setBill] = useState("");
   const [people, setPeople] = useState("");
   const [Tip, setTip] = useState("");
-
-  const convert = parseFloat(Tip / 100);
-  const TipAmount = (bill * convert) / people;
-  const total = (bill * convert + parseFloat(bill)) / people;
+  const [TipAmount, setTipAmount] = useState(0);
+  const [total, setTotal] = useState(0);
   const reset = () => {
     setBill("");
     setTip("");
     setPeople("");
+    setTipAmount(0);
+    setTotal(0);
   };
+
+  useEffect(() => {
+    if (Tip && bill && people < 0) {
+      let convert = parseFloat(Tip / 100);
+      let TipAmount = (bill * convert) / people;
+      let total = (bill * convert + parseFloat(bill)) / people;
+      setTipAmount(TipAmount);
+      setTotal(total);
+      console.log("entro");
+    }
+  }, [bill, Tip, people]);
 
   return (
     <div className="h-screen bg-cyan-light_gray_f  ">
       <header className="mx-auto py-12 2xl:py-12 xl:py-12 lg:py-12 md:py-5 sm:py-0">
-        <h1 class="text-cyan-title mx-auto font-semibold  text-center  text-2xl tracking-widest uppercase">
+        <h1 className="text-cyan-title mx-auto font-semibold  text-center  text-2xl tracking-widest uppercase">
           spli <br />
           tter
         </h1>
@@ -31,7 +41,7 @@ export default function Box() {
           <div className="flex flex-auto flex-wrap px-7 py-7  rounded-3xl  shadow-lg bg-white  text-black     max-w-1/2  2xl:max-w-3/4 xl:max-w-3/4 lg:max-w-3/4 md:max-w-full sm:max-w-full">
             <div className="  justify-items-stretch flex-auto mx-2  max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full">
               <label
-                for="bill"
+                htmlFor="bill"
                 className="block text-cyan-dark_gray font-semibold"
               >
                 Bill
@@ -73,7 +83,7 @@ export default function Box() {
                 />
               </div>
               <label
-                for="people"
+                htmlFor="people"
                 className="block text-cyan-dark_gray font-semibold"
               >
                 Number of People
@@ -102,8 +112,7 @@ export default function Box() {
                     <span className="block text-cyan-dark_gray">/person</span>
                   </div>
                   <div className="text-cyan-strong text-5xl  font-bold">
-                    $
-                    {isNaN(TipAmount) ? (0.0).toFixed(2) : TipAmount.toFixed(2)}
+                    ${TipAmount.toFixed(2)}
                   </div>
                 </div>
                 <div className="flex justify-between items-center my-5">
@@ -112,7 +121,7 @@ export default function Box() {
                     <span className="block text-cyan-dark_gray">/person</span>
                   </div>
                   <div className="text-cyan-strong text-5xl font-bold">
-                    ${isNaN(total) ? (0.0).toFixed(2) : total.toFixed(2)}
+                    ${total.toFixed(2)}
                   </div>
                 </div>
               </div>
