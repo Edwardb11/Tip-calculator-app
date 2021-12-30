@@ -18,13 +18,12 @@ export default function Box() {
   };
 
   useEffect(() => {
-    if (Tip && bill && people < 0) {
+    if (Tip && bill && people > 0) {
       let convert = parseFloat(Tip / 100);
       let TipAmount = (bill * convert) / people;
       let total = (bill * convert + parseFloat(bill)) / people;
       setTipAmount(TipAmount);
       setTotal(total);
-      console.log("entro");
     }
   }, [bill, Tip, people]);
 
