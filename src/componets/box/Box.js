@@ -56,7 +56,7 @@ export default function Box() {
                   min="1"
                   onChange={(e) => setBill(e.target.value)}
                   required
-                  className="text-right group relative focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block w-full px-3 py-2 mb-7 text-black bg-cyan-light_gray  "
+                  className="text-right group relative focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark border  font-semibold focus:border-transparent rounded-md block w-full px-3 py-2 mb-7 text-black bg-cyan-light_gray  "
                   placeholder="0"
                 />
               </div>
@@ -99,7 +99,7 @@ export default function Box() {
                   onChange={(e) => setPeople(e.target.value)}
                   required
                   placeholder="1"
-                  className=" group relative  text-right rounded-md block w-full text-2xl px-3 py-2 mb-7 border font-black focus:outline-none focus:ring-2 focus:ring-cyan-dark    text-black  bg-cyan-light_gray   hover:bg-white  "
+                  className=" group relative  text-right rounded-md block w-full text-2xl px-3 py-2 mb-7 border font-black focus:border-transparent  focus:ring-2 focus:ring-cyan-dark    text-black  bg-cyan-light_gray   hover:bg-white  "
                 />
               </div>
             </div>
