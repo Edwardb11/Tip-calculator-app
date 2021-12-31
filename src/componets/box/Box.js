@@ -5,7 +5,7 @@ import { ReactComponent as PersonIcon } from "../../images/icon-person.svg";
 
 export default function Box() {
   const [bill, setBill] = useState("");
-  const [people, setPeople] = useState("");
+  const [people, setPeople] = useState(0);
   const [Tip, setTip] = useState("");
   const [TipAmount, setTipAmount] = useState(0);
   const [total, setTotal] = useState(0);
@@ -38,7 +38,7 @@ export default function Box() {
       <main>
         <div className=" flex justify-center font-black">
           <div className="flex flex-auto flex-wrap px-7 py-7  rounded-3xl  shadow-lg bg-white  text-black     max-w-1/2  2xl:max-w-3/4 xl:max-w-3/4 lg:max-w-3/4 md:max-w-full sm:max-w-full">
-            <div className="  justify-items-stretch flex-auto mx-2  max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full">
+            <div className="  flex-auto mx-2  max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full">
               <label
                 htmlFor="bill"
                 className="block text-cyan-dark_gray font-semibold"
@@ -69,7 +69,7 @@ export default function Box() {
                 <Button onClik={() => setTip(15)} newContent={15}></Button>
                 <Button onClik={() => setTip(25)} newContent={25}></Button>
                 <Button onClik={() => setTip(50)} newContent={50}></Button>
-
+                ``
                 <input
                   id="tip"
                   name="tip"
@@ -87,6 +87,9 @@ export default function Box() {
               >
                 Number of People
               </label>
+              {people === 0 && (
+                <div className=" text-red-500 text-right">Can't be zero</div>
+              )}
               <div className="bg-cyan-light_gray  relative">
                 <PersonIcon className="absolute top-2.5 left-3 z-10" />
                 <input
@@ -99,11 +102,15 @@ export default function Box() {
                   onChange={(e) => setPeople(e.target.value)}
                   required
                   placeholder="1"
-                  className=" group relative  text-right rounded-md block w-full text-2xl px-3 py-2 mb-7 border font-black focus:border-transparent  focus:ring-2 focus:ring-cyan-dark    text-black  bg-cyan-light_gray   hover:bg-white  "
+                  className={` group relative  text-right rounded-md block w-full text-2xl px-3 py-2 mb-7 border font-black    text-black  bg-cyan-light_gray   hover:bg-white ${
+                    people === 0
+                      ? "outline-none ring-2 ring-red-500 focus:ring-red-500 "
+                      : "focus:outline-none focus:ring-2 focus:ring-cyan-dark    focus:border-transparent"
+                  }`}
                 />
               </div>
             </div>
-            <div className="justify-items-stretch flex-auto max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full rounded-3xl  mx-2   px-5 py-10   bg-cyan-dark ">
+            <div className="flex-auto max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full rounded-3xl  mx-2   px-5 py-10   bg-cyan-dark ">
               <div className="flex flex-col ">
                 <div className="flex justify-between items-center">
                   <div className="text-cyan-light_gray font-semibold ">
