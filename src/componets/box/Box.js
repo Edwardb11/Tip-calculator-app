@@ -117,7 +117,7 @@ export default function Box() {
                     Tip Amount
                     <span className="block text-cyan-dark_gray">/person</span>
                   </div>
-                  <div className="text-cyan-strong text-5xl  font-bold  w-42  ">
+                  <div className="text-cyan-strong text-5xl  font-bold  w-44  ">
                     ${TipAmount === 0 ? "0.00" : TipAmount.toFixed(2)}
                   </div>
                 </div>
@@ -126,7 +126,7 @@ export default function Box() {
                     Total
                     <span className="block text-cyan-dark_gray">/person</span>
                   </div>
-                  <div className="text-cyan-strong text-5xl font-bold  w-42  ">
+                  <div className="text-cyan-strong text-5xl font-bold   w-44  ">
                     ${total === 0 ? "0.00" : total.toFixed(2)}
                   </div>
                 </div>
