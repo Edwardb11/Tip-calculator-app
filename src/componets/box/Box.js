@@ -111,13 +111,13 @@ export default function Box() {
               </div>
             </div>
             <div className="flex-auto max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full rounded-3xl  mx-2   px-5 py-10   bg-cyan-dark ">
-              <div className="">
-                <div className="flex justify-between items-center">
+              <div className="flex flex-col">
+                <div className="flex justify-between items-center ">
                   <div className="text-cyan-light_gray font-semibold ">
                     Tip Amount
                     <span className="block text-cyan-dark_gray">/person</span>
                   </div>
-                  <div className="text-cyan-strong text-5xl  font-bold">
+                  <div className="text-cyan-strong text-5xl  font-bold  w-42  ">
                     ${TipAmount === 0 ? "0.00" : TipAmount.toFixed(2)}
                   </div>
                 </div>
@@ -126,7 +126,7 @@ export default function Box() {
                     Total
                     <span className="block text-cyan-dark_gray">/person</span>
                   </div>
-                  <div className="text-cyan-strong text-5xl font-bold">
+                  <div className="text-cyan-strong text-5xl font-bold  w-42  ">
                     ${total === 0 ? "0.00" : total.toFixed(2)}
                   </div>
                 </div>
