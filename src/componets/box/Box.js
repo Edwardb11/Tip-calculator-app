@@ -1,27 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "../button/Button";
-import { ReactComponent as Logo } from "../../images/logo.svg";
 import { ReactComponent as DollarIcon } from "../../images/icon-dollar.svg";
 import { ReactComponent as PersonIcon } from "../../images/icon-person.svg";
 
 export default function Box() {
   const [bill, setBill] = useState("");
-  const [people, setPeople] = useState("");
+  const [people, setPeople] = useState(0);
   const [Tip, setTip] = useState("");
-
-  const convert = parseFloat(Tip / 100);
-  const TipAmount = (bill * convert) / people;
-  const total = (bill * convert + parseFloat(bill)) / people;
+  const [TipAmount, setTipAmount] = useState(0);
+  const [total, setTotal] = useState(0);
   const reset = () => {
     setBill("");
     setTip("");
     setPeople("");
+    setTipAmount(0);
+    setTotal(0);
   };
+
+  useEffect(() => {
+    if (Tip && bill && people > 0) {
+      let convert = parseFloat(Tip / 100);
+      let TipAmount = (bill * convert) / people;
+      let total = (bill * convert + parseFloat(bill)) / people;
+      setTipAmount(TipAmount);
+      setTotal(total);
+    }
+  }, [bill, Tip, people]);
 
   return (
     <div className="h-screen bg-cyan-light_gray_f  ">
       <header className="mx-auto py-12 2xl:py-12 xl:py-12 lg:py-12 md:py-5 sm:py-0">
-        <h1 class="text-cyan-title mx-auto font-semibold  text-center  text-2xl tracking-widest uppercase">
+        <h1 className="text-cyan-title mx-auto font-semibold  text-center  text-2xl tracking-widest uppercase">
           spli <br />
           tter
         </h1>
@@ -29,9 +38,9 @@ export default function Box() {
       <main>
         <div className=" flex justify-center font-black">
           <div className="flex flex-auto flex-wrap px-7 py-7  rounded-3xl  shadow-lg bg-white  text-black     max-w-1/2  2xl:max-w-3/4 xl:max-w-3/4 lg:max-w-3/4 md:max-w-full sm:max-w-full">
-            <div className="  justify-items-stretch flex-auto mx-2  max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full">
+            <div className="  flex-auto mx-2  max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full">
               <label
-                for="bill"
+                htmlFor="bill"
                 className="block text-cyan-dark_gray font-semibold"
               >
                 Bill
@@ -47,7 +56,7 @@ export default function Box() {
                   min="1"
                   onChange={(e) => setBill(e.target.value)}
                   required
-                  className="text-right group relative focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block w-full px-3 py-2 mb-7 text-black bg-cyan-light_gray  "
+                  className="text-right group relative focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark border  font-semibold focus:border-transparent rounded-md block w-full px-3 py-2 mb-7 text-black bg-cyan-light_gray  "
                   placeholder="0"
                 />
               </div>
@@ -60,7 +69,7 @@ export default function Box() {
                 <Button onClik={() => setTip(15)} newContent={15}></Button>
                 <Button onClik={() => setTip(25)} newContent={25}></Button>
                 <Button onClik={() => setTip(50)} newContent={50}></Button>
-
+                ``
                 <input
                   id="tip"
                   name="tip"
@@ -73,11 +82,14 @@ export default function Box() {
                 />
               </div>
               <label
-                for="people"
+                htmlFor="people"
                 className="block text-cyan-dark_gray font-semibold"
               >
                 Number of People
               </label>
+              {people === 0 && (
+                <div className=" text-red-500 text-right">Can't be zero</div>
+              )}
               <div className="bg-cyan-light_gray  relative">
                 <PersonIcon className="absolute top-2.5 left-3 z-10" />
                 <input
@@ -90,20 +102,23 @@ export default function Box() {
                   onChange={(e) => setPeople(e.target.value)}
                   required
                   placeholder="1"
-                  className=" group relative  text-right rounded-md block w-full text-2xl px-3 py-2 mb-7 border font-black focus:outline-none focus:ring-2 focus:ring-cyan-dark    text-black  bg-cyan-light_gray   hover:bg-white  "
+                  className={` group relative  text-right rounded-md block w-full text-2xl px-3 py-2 mb-7 border font-black    text-black  bg-cyan-light_gray   hover:bg-white ${
+                    people === 0
+                      ? "outline-none ring-2 ring-red-500 focus:ring-red-500 "
+                      : "focus:outline-none focus:ring-2 focus:ring-cyan-dark    focus:border-transparent"
+                  }`}
                 />
               </div>
             </div>
-            <div className="justify-items-stretch flex-auto max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full rounded-3xl  mx-2   px-5 py-10   bg-cyan-dark ">
-              <div className="flex flex-col ">
-                <div className="flex justify-between items-center">
+            <div className="flex-auto max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full rounded-3xl  mx-2   px-5 py-10   bg-cyan-dark ">
+              <div className="flex flex-col">
+                <div className="flex justify-between items-center ">
                   <div className="text-cyan-light_gray font-semibold ">
                     Tip Amount
                     <span className="block text-cyan-dark_gray">/person</span>
                   </div>
-                  <div className="text-cyan-strong text-5xl  font-bold">
-                    $
-                    {isNaN(TipAmount) ? (0.0).toFixed(2) : TipAmount.toFixed(2)}
+                  <div className="text-cyan-strong text-5xl  font-bold  w-44  ">
+                    ${TipAmount === 0 ? "0.00" : TipAmount.toFixed(2)}
                   </div>
                 </div>
                 <div className="flex justify-between items-center my-5">
@@ -111,8 +126,8 @@ export default function Box() {
                     Total
                     <span className="block text-cyan-dark_gray">/person</span>
                   </div>
-                  <div className="text-cyan-strong text-5xl font-bold">
-                    ${isNaN(total) ? (0.0).toFixed(2) : total.toFixed(2)}
+                  <div className="text-cyan-strong text-5xl font-bold   w-44  ">
+                    ${total === 0 ? "0.00" : total.toFixed(2)}
                   </div>
                 </div>
               </div>
