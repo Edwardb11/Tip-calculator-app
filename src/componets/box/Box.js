@@ -5,7 +5,7 @@ import { ReactComponent as PersonIcon } from "../../images/icon-person.svg";
 
 export default function Box() {
   const [bill, setBill] = useState("");
-  const [people, setPeople] = useState(0);
+  const [people, setPeople] = useState("");
   const [Tip, setTip] = useState("");
   const [TipAmount, setTipAmount] = useState(0);
   const [total, setTotal] = useState(0);
