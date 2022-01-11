@@ -30,6 +30,8 @@ export default function Box() {
         setTipC("");
       }
     }
+  }, [bill, Tip, people]);
+  useEffect(() => {
     if (TipC) {
       if (TipC && bill && people > 0) {
         let convert = parseFloat(TipC / 100);
@@ -40,7 +42,7 @@ export default function Box() {
         setTip("");
       }
     }
-  }, [bill, Tip || TipC, people]);
+  }, [bill, TipC, people]);
 
   return (
     <div className="h-screen bg-cyan-light_gray_f  ">
