@@ -7,25 +7,40 @@ export default function Box() {
   const [bill, setBill] = useState("");
   const [people, setPeople] = useState("");
   const [Tip, setTip] = useState("");
+  const [TipC, setTipC] = useState("");
   const [TipAmount, setTipAmount] = useState(0);
   const [total, setTotal] = useState(0);
   const reset = () => {
     setBill("");
     setTip("");
+    setTipC("");
     setPeople("");
     setTipAmount(0);
     setTotal(0);
   };
 
   useEffect(() => {
-    if (Tip && bill && people > 0) {
-      let convert = parseFloat(Tip / 100);
-      let TipAmount = (bill * convert) / people;
-      let total = (bill * convert + parseFloat(bill)) / people;
-      setTipAmount(TipAmount);
-      setTotal(total);
+    if (Tip) {
+      if (Tip && bill && people > 0) {
+        let convert = parseFloat(Tip / 100);
+        let TipAmount = (bill * convert) / people;
+        let total = (bill * convert + parseFloat(bill)) / people;
+        setTipAmount(TipAmount);
+        setTotal(total);
+        setTipC("");
+      }
     }
-  }, [bill, Tip, people]);
+    if (TipC) {
+      if (TipC && bill && people > 0) {
+        let convert = parseFloat(TipC / 100);
+        let TipAmount = (bill * convert) / people;
+        let total = (bill * convert + parseFloat(bill)) / people;
+        setTipAmount(TipAmount);
+        setTotal(total);
+        setTip("");
+      }
+    }
+  }, [bill, Tip || TipC, people]);
 
   return (
     <div className="h-screen bg-cyan-light_gray_f  ">
@@ -69,14 +84,13 @@ export default function Box() {
                 <Button onClik={() => setTip(15)} newContent={15}></Button>
                 <Button onClik={() => setTip(25)} newContent={25}></Button>
                 <Button onClik={() => setTip(50)} newContent={50}></Button>
-                ``
                 <input
                   id="tip"
                   name="tip"
                   type="number"
                   min="1"
-                  value={Tip}
-                  onChange={(e) => setTip(e.target.value)}
+                  value={TipC}
+                  onChange={(e) => setTipC(e.target.value)}
                   className=" group relative  w-1/4 mx-2 my-2 py-2 px-1  sm:w-2/5 text-center focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block text-black bg-cyan-light_gray "
                   placeholder="Custom"
                 />
