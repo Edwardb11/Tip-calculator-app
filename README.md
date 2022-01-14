@@ -42,7 +42,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Tip-calculator-app](https://github.com/Edwardb11/Tip-calculator-app)
-- Live Site URL: [Add live site URL here]()
+- Live Site URL: [Add live site URL here](https://tip-calculator-app1-fanz1zbke-edwardb11.vercel.app/)
 
 ## My process
 
