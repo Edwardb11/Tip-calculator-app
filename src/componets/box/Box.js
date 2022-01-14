@@ -58,12 +58,12 @@ export default function Box() {
             <div className="  flex-auto mx-2  max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full">
               <label
                 htmlFor="bill"
-                className="block text-cyan-dark_gray font-semibold"
+                className="block text-cyan-dark_gray font-semibold mb-2 sm:mb-0"
               >
                 Bill
               </label>
               <div className="bg-cyan-light_gray relative">
-                <DollarIcon className="absolute top-2.5 left-3 z-10" />
+                <DollarIcon className="absolute top-4 left-3 z-10" />
                 <input
                   id="bill"
                   name="bill"
@@ -73,7 +73,7 @@ export default function Box() {
                   min="1"
                   onChange={(e) => setBill(e.target.value)}
                   required
-                  className="text-right group relative focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark border  font-semibold focus:border-transparent rounded-md block w-full px-3 py-2 mb-7 text-black bg-cyan-light_gray  "
+                  className="text-right group relative focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark border  font-semibold focus:border-transparent rounded-md block w-full px-3 py-2 mb-5 text-black bg-cyan-light_gray  "
                   placeholder="0"
                 />
               </div>
@@ -93,13 +93,13 @@ export default function Box() {
                   min="1"
                   value={TipC}
                   onChange={(e) => setTipC(e.target.value)}
-                  className=" group relative  w-1/4 mx-2 my-2 py-2 px-1  sm:w-2/5 text-center focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block text-black bg-cyan-light_gray "
+                  className=" group relative  w-1/4 mx-2 my-2 py-2 px-1 sm:w-2/5 text-left focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block text-black bg-cyan-light_gray "
                   placeholder="Custom"
                 />
               </div>
               <label
                 htmlFor="people"
-                className="block text-cyan-dark_gray font-semibold"
+                className="block text-cyan-dark_gray font-semibold mb-2 sm:mb-0"
               >
                 Number of People
               </label>
@@ -107,7 +107,7 @@ export default function Box() {
                 <div className=" text-red-500 text-right">Can't be zero</div>
               )}
               <div className="bg-cyan-light_gray  relative">
-                <PersonIcon className="absolute top-2.5 left-3 z-10" />
+                <PersonIcon className="absolute top-4 left-3 z-10" />
                 <input
                   id="people"
                   name="people"
@@ -133,7 +133,7 @@ export default function Box() {
                     Tip Amount
                     <span className="block text-cyan-dark_gray">/person</span>
                   </div>
-                  <div className="text-cyan-strong text-5xl  font-bold  w-44  ">
+                  <div className="text-cyan-strong text-5xl  font-bold  w-44 ">
                     ${TipAmount === 0 ? "0.00" : TipAmount.toFixed(2)}
                   </div>
                 </div>
