@@ -34,6 +34,8 @@ Users should be able to:
 ##### Mobile: 375px 📱
 
 ![Mobile](./design/tip-calculator-mobile.png)
+
+##### Desktop: 1400px 💻
 ![Desktop](./design/tip-calculator-desktop.png)
 
 
