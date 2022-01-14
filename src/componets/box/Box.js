@@ -93,7 +93,7 @@ export default function Box() {
                   min="1"
                   value={TipC}
                   onChange={(e) => setTipC(e.target.value)}
-                  className=" group relative  w-btn m-1 p-3  sm:w-2/5 text-left focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block text-black bg-cyan-light_gray "
+                  className=" group relative  w-btn m-2 p-3  sm:w-2/5 text-left focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block text-black bg-cyan-light_gray "
                   placeholder="Custom"
                 />
               </div>
@@ -159,6 +159,22 @@ export default function Box() {
           </div>
         </div>
       </main>
+      <div className=" text-center m-8">
+        Challenge by
+        <a
+          href="https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX"
+          target="_blank"
+        >
+          Frontend Mentor
+        </a>
+        . Coded by 👑
+        <a
+          href="https://github.com/Edwardb11/Tip-calculator-app"
+          target="_blank"
+        >
+          Edwardb11👑
+        </a>
+      </div>
     </div>
   );
 }

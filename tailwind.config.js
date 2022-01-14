@@ -41,7 +41,7 @@ module.exports = {
     },
     extend: {
       width: {
-        btn: "31%",
+        btn: "29%",
       },
       colors: {
         cyan: {
