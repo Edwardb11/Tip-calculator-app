@@ -158,23 +158,23 @@ export default function Box() {
             </div>
           </div>
         </div>
+        <div className=" text-center m-8">
+          Challenge by
+          <a
+            href="https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX"
+            target="_blank"
+          >
+            Frontend Mentor
+          </a>
+          . Coded by 👑
+          <a
+            href="https://github.com/Edwardb11/Tip-calculator-app"
+            target="_blank"
+          >
+            Edwardb11👑
+          </a>
+        </div>
       </main>
-      <div className=" text-center m-8">
-        Challenge by
-        <a
-          href="https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX"
-          target="_blank"
-        >
-          Frontend Mentor
-        </a>
-        . Coded by 👑
-        <a
-          href="https://github.com/Edwardb11/Tip-calculator-app"
-          target="_blank"
-        >
-          Edwardb11👑
-        </a>
-      </div>
     </div>
   );
 }
