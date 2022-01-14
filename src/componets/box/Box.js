@@ -80,7 +80,7 @@ export default function Box() {
               <span className="block text-cyan-dark_gray font-semibold mb-2 sm:mb-0">
                 Select Tip %
               </span>
-              <div className="flex flex-wrap flex-auto mb-5  sm:-mx-5 sm:mb-1 -mx-1  md:justify-start sm:justify-center ">
+              <div className="flex flex-wrap  mb-5  sm:-mx-5 sm:mb-1  -mx-3 sm:justify-center ">
                 <Button onClik={() => setTip(5)} newContent={5}></Button>
                 <Button onClik={() => setTip(10)} newContent={10}></Button>
                 <Button onClik={() => setTip(15)} newContent={15}></Button>
@@ -93,7 +93,7 @@ export default function Box() {
                   min="1"
                   value={TipC}
                   onChange={(e) => setTipC(e.target.value)}
-                  className=" group relative  w-1/4 mx-2 my-2 py-2 px-1 sm:w-2/5 text-left focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block text-black bg-cyan-light_gray "
+                  className=" group relative  w-btn m-1 p-3  sm:w-2/5 text-left focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block text-black bg-cyan-light_gray "
                   placeholder="Custom"
                 />
               </div>
@@ -150,7 +150,7 @@ export default function Box() {
               <div className="mt-12 pt-4 2xl:mt-12 xl:mt-12  lg:mt-12 md:mt-0 sm:-mt-8">
                 <button
                   onClick={() => reset()}
-                  className="bg-cyan-dark_btn    w-full  mt-12 md:mt-0 py-2 px-4  border border-transparent rounded-md font-semibold text-cyan-dark  hover:text-cyan-dark hover:bg-cyan-light_gray_f  uppercase"
+                  className="bg-cyan-dark_btn    w-full  mt-9 md:mt-0 p-3 border border-transparent rounded-md font-semibold text-cyan-dark  hover:text-cyan-dark hover:bg-cyan-light_gray_f  uppercase"
                 >
                   reset
                 </button>

@@ -40,6 +40,9 @@ module.exports = {
       full: "100%",
     },
     extend: {
+      width: {
+        btn: "31%",
+      },
       colors: {
         cyan: {
           strong: "hsl(172, 67%, 45%)",
