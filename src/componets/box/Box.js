@@ -92,6 +92,7 @@ export default function Box() {
                   type="number"
                   min="1"
                   value={TipC}
+                  maxLength="100"
                   onChange={(e) => setTipC(e.target.value)}
                   className=" group relative  w-btn m-2 p-3  sm:w-2/5 text-left focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block text-black bg-cyan-light_gray "
                   placeholder="Custom"
@@ -133,7 +134,7 @@ export default function Box() {
                     Tip Amount
                     <span className="block text-cyan-dark_gray">/person</span>
                   </div>
-                  <div className="text-cyan-strong text-5xl  font-bold  w-44 ">
+                  <div className="text-cyan-strong text-5xl overflow-x-auto overflow-y-hidden  font-bold  w-44 ">
                     ${TipAmount === 0 ? "0.00" : TipAmount.toFixed(2)}
                   </div>
                 </div>
@@ -142,7 +143,7 @@ export default function Box() {
                     Total
                     <span className="block text-cyan-dark_gray">/person</span>
                   </div>
-                  <div className="text-cyan-strong text-5xl font-bold   w-44  ">
+                  <div className="text-cyan-strong text-5xl font-bold overflow-x-auto overflow-y-hidden w-44  ">
                     ${total === 0 ? "0.00" : total.toFixed(2)}
                   </div>
                 </div>
