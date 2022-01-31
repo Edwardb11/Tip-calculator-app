@@ -45,7 +45,7 @@ export default function Box() {
   }, [bill, TipC, people]);
 
   return (
-    <div className="h-screen bg-cyan-light_gray_f  ">
+    <div className="h-min-screen bg-cyan-light_gray_f  ">
       <header className="mx-auto py-12 2xl:py-12 xl:py-12 lg:py-12 md:py-5 sm:py-0">
         <h1 className="text-cyan-title mx-auto font-semibold  text-center  text-2xl tracking-widest uppercase">
           spli <br />
@@ -92,6 +92,7 @@ export default function Box() {
                   type="number"
                   min="1"
                   value={TipC}
+                  maxLength="100"
                   onChange={(e) => setTipC(e.target.value)}
                   className=" group relative  w-btn m-2 p-3  sm:w-2/5 text-left focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block text-black bg-cyan-light_gray "
                   placeholder="Custom"
@@ -133,7 +134,7 @@ export default function Box() {
                     Tip Amount
                     <span className="block text-cyan-dark_gray">/person</span>
                   </div>
-                  <div className="text-cyan-strong text-5xl  font-bold  w-44 ">
+                  <div className="text-cyan-strong text-5xl overflow-x-auto overflow-y-hidden  font-bold  w-44 ">
                     ${TipAmount === 0 ? "0.00" : TipAmount.toFixed(2)}
                   </div>
                 </div>
@@ -142,7 +143,7 @@ export default function Box() {
                     Total
                     <span className="block text-cyan-dark_gray">/person</span>
                   </div>
-                  <div className="text-cyan-strong text-5xl font-bold   w-44  ">
+                  <div className="text-cyan-strong text-5xl font-bold overflow-x-auto overflow-y-hidden w-44  ">
                     ${total === 0 ? "0.00" : total.toFixed(2)}
                   </div>
                 </div>
@@ -158,21 +159,25 @@ export default function Box() {
             </div>
           </div>
         </div>
-        <div className=" text-center m-8">
-          Challenge by
-          <a
-            href="https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX"
-            target="_blank"
-          >
-            Frontend Mentor
-          </a>
-          . Coded by 👑
-          <a
-            href="https://github.com/Edwardb11/Tip-calculator-app"
-            target="_blank"
-          >
-            Edwardb11👑
-          </a>
+        <div className="flex justify-center tracking-wide  text-center  ">
+          <p>
+            Challenge by<span> </span>
+            <a
+              href="https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX"
+              target="_blank"
+              className="text-blue-800  "
+            >
+              Frontend Mentor.<span> </span>
+            </a>
+            Coded by 👑
+            <a
+              href="https://github.com/Edwardb11/Tip-calculator-app"
+              target="_blank"
+              className="text-blue-800  "
+            >
+              Edwardb11👑
+            </a>
+          </p>
         </div>
       </main>
     </div>
