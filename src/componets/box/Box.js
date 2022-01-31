@@ -45,7 +45,7 @@ export default function Box() {
   }, [bill, TipC, people]);
 
   return (
-    <div className="h-screen bg-cyan-light_gray_f  ">
+    <div className="h-min-screen bg-cyan-light_gray_f  ">
       <header className="mx-auto py-12 2xl:py-12 xl:py-12 lg:py-12 md:py-5 sm:py-0">
         <h1 className="text-cyan-title mx-auto font-semibold  text-center  text-2xl tracking-widest uppercase">
           spli <br />
@@ -158,7 +158,7 @@ export default function Box() {
             </div>
           </div>
         </div>
-        <div className="flex justify-center tracking-wide  text-center m-8">
+        <div className="flex justify-center tracking-wide  text-center  ">
           <p>
             Challenge by<span> </span>
             <a
