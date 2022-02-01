@@ -143,7 +143,7 @@ export default function Box() {
                     Total
                     <span className="block text-cyan-dark_gray">/person</span>
                   </div>
-                  <div className="text-cyan-strong text-5xl font-bold">
+                  <div className="text-cyan-strong text-5xl font-bold ">
                     ${total === 0 ? "0.00" : total.toFixed(2)}
                   </div>
                 </div>
