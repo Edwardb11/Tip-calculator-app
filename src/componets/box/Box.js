@@ -55,7 +55,7 @@ export default function Box() {
       <main>
         <div className=" flex justify-center font-black">
           <div className="flex flex-auto flex-wrap px-7 py-7  rounded-3xl  shadow-lg bg-white  text-black     max-w-1/2  2xl:max-w-3/4 xl:max-w-3/4 lg:max-w-3/4 md:max-w-full sm:max-w-full">
-            <div className="  flex-1 mx-2  max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full">
+            <div className="  flex-auto mx-2  max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full">
               <label
                 htmlFor="bill"
                 className="block text-cyan-dark_gray font-semibold mb-2 sm:mb-0"
@@ -127,14 +127,14 @@ export default function Box() {
                 />
               </div>
             </div>
-            <div className="flex-1 max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full rounded-3xl  mx-auto   px-5 py-10   bg-cyan-dark ">
+            <div className="flex-auto max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full rounded-3xl  mx-2   px-5 py-10   bg-cyan-dark ">
               <div className="flex flex-col">
-                <div className="flex justify-between items-center  ">
-                  <div className="text-cyan-light_gray font-semibold  ">
+                <div className="flex justify-between items-center ">
+                  <div className="text-cyan-light_gray font-semibold ">
                     Tip Amount
                     <span className="block text-cyan-dark_gray">/person</span>
                   </div>
-                  <div className="text-cyan-strong text-5xl  font-bold  ">
+                  <div className="text-cyan-strong text-5xl font-bold">
                     ${TipAmount === 0 ? "0.00" : TipAmount.toFixed(2)}
                   </div>
                 </div>
@@ -147,15 +147,14 @@ export default function Box() {
                     ${total === 0 ? "0.00" : total.toFixed(2)}
                   </div>
                 </div>
-
-                <div className="mt-12 pt-4 2xl:mt-12 xl:mt-12  lg:mt-12 md:mt-0 sm:-mt-8">
-                  <button
-                    onClick={() => reset()}
-                    className="bg-cyan-dark_btn    w-full  mt-9 md:mt-0 p-3 border border-transparent rounded-md font-semibold text-cyan-dark  hover:text-cyan-dark hover:bg-cyan-light_gray_f  uppercase"
-                  >
-                    reset
-                  </button>
-                </div>
+              </div>
+              <div className="mt-12 pt-4 2xl:mt-12 xl:mt-12  lg:mt-12 md:mt-0 sm:-mt-8">
+                <button
+                  onClick={() => reset()}
+                  className="bg-cyan-dark_btn    w-full  mt-9 md:mt-0 p-3 border border-transparent rounded-md font-semibold text-cyan-dark  hover:text-cyan-dark hover:bg-cyan-light_gray_f  uppercase"
+                >
+                  reset
+                </button>
               </div>
             </div>
           </div>
