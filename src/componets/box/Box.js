@@ -94,7 +94,7 @@ export default function Box() {
                   value={TipC}
                   maxLength="100"
                   onChange={(e) => setTipC(e.target.value)}
-                  className=" group relative  w-btn m-2 p-3  sm:w-2/5 text-left focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block text-black bg-cyan-light_gray "
+                  className=" group relative  w-btn  p-3  m-2 pl-8  sm:w-2/5 text-left focus:outline-none  text-2xl   focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block text-black bg-cyan-light_gray "
                   placeholder="Custom"
                 />
               </div>
