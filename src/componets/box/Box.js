@@ -23,8 +23,19 @@ export default function Box() {
     if (Tip) {
       if (Tip && bill && people > 0) {
         let convert = parseFloat(Tip / 100);
-        let TipAmount = (bill * convert) / people;
-        let total = (bill * convert + parseFloat(bill)) / people;
+        let TipAmount = ((bill * convert) / people).toFixed(2);
+        let total = ((bill * convert + parseFloat(bill)) / people).toFixed(2);
+        setTipAmount(TipAmount);
+        setTotal(total);
+        setTipC("");
+      }
+      if (total.length >= 9 || TipAmount.length >= 9) {
+        let convert = parseFloat(Tip / 100);
+        let TipAmount = ((bill * convert) / people).toExponential(4);
+        let total = (
+          (bill * convert + parseFloat(bill)) /
+          people
+        ).toExponential(4);
         setTipAmount(TipAmount);
         setTotal(total);
         setTipC("");
@@ -35,8 +46,19 @@ export default function Box() {
     if (TipC) {
       if (TipC && bill && people > 0) {
         let convert = parseFloat(TipC / 100);
-        let TipAmount = (bill * convert) / people;
-        let total = (bill * convert + parseFloat(bill)) / people;
+        let TipAmount = ((bill * convert) / people).toFixed(2);
+        let total = ((bill * convert + parseFloat(bill)) / people).toFixed(2);
+        setTipAmount(TipAmount);
+        setTotal(total);
+        setTip("");
+      }
+      if (total.length >= 9 || TipAmount.length >= 9) {
+        let convert = parseFloat(TipC / 100);
+        let TipAmount = ((bill * convert) / people).toExponential(4);
+        let total = (
+          (bill * convert + parseFloat(bill)) /
+          people
+        ).toExponential(4);
         setTipAmount(TipAmount);
         setTotal(total);
         setTip("");
@@ -134,8 +156,8 @@ export default function Box() {
                     Tip Amount
                     <span className="block text-cyan-dark_gray">/person</span>
                   </div>
-                  <div className="text-cyan-strong text-5xl font-bold">
-                    ${TipAmount === 0 ? "0.00" : TipAmount.toFixed(2)}
+                  <div className="text-cyan-strong text-4xl font-bold">
+                    ${TipAmount === 0 ? "0.00" : TipAmount}
                   </div>
                 </div>
                 <div className="flex justify-between items-center my-5">
@@ -143,8 +165,8 @@ export default function Box() {
                     Total
                     <span className="block text-cyan-dark_gray">/person</span>
                   </div>
-                  <div className="text-cyan-strong text-5xl font-bold ">
-                    ${total === 0 ? "0.00" : total.toFixed(2)}
+                  <div className="text-cyan-strong text-4xl font-bold ">
+                    ${total === 0 ? "0.00" : total}
                   </div>
                 </div>
               </div>
