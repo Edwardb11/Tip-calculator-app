@@ -29,13 +29,13 @@ export default function Box() {
         setTotal(total);
         setTipC("");
       }
-      if (total.length >= 9 || TipAmount.length >= 9) {
+      if (total.length >= 7 || TipAmount.length >= 7) {
         let convert = parseFloat(Tip / 100);
-        let TipAmount = ((bill * convert) / people).toExponential(4);
+        let TipAmount = ((bill * convert) / people).toExponential(2);
         let total = (
           (bill * convert + parseFloat(bill)) /
           people
-        ).toExponential(4);
+        ).toExponential(2);
         setTipAmount(TipAmount);
         setTotal(total);
         setTipC("");
@@ -52,13 +52,13 @@ export default function Box() {
         setTotal(total);
         setTip("");
       }
-      if (total.length >= 9 || TipAmount.length >= 9) {
+      if (total.length >= 7 || TipAmount.length >= 7) {
         let convert = parseFloat(TipC / 100);
-        let TipAmount = ((bill * convert) / people).toExponential(4);
+        let TipAmount = ((bill * convert) / people).toExponential(2);
         let total = (
           (bill * convert + parseFloat(bill)) /
           people
-        ).toExponential(4);
+        ).toExponential(2);
         setTipAmount(TipAmount);
         setTotal(total);
         setTip("");
@@ -77,7 +77,7 @@ export default function Box() {
       <main className="bg-cyan-light_gray_f py-16 2xl:py-16 xl:py-16 lg:py-0 md:py-0 sm:py-0">
         <div className=" flex justify-center font-black">
           <div className="flex flex-auto flex-wrap px-7 py-7  rounded-3xl  shadow-lg bg-white  text-black     max-w-1/2  2xl:max-w-3/4 xl:max-w-3/4 lg:max-w-3/4 md:max-w-full sm:max-w-full">
-            <div className="  flex-auto mx-2  max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full">
+            <div className="  flex-auto mx-auto  max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full">
               <label
                 htmlFor="bill"
                 className="block text-cyan-dark_gray font-semibold mb-2 sm:mb-0"
@@ -116,7 +116,7 @@ export default function Box() {
                   value={TipC}
                   maxLength="100"
                   onChange={(e) => setTipC(e.target.value)}
-                  className=" group relative  w-btn  p-3  m-2 pl-8  sm:w-2/5 text-left focus:outline-none  text-2xl   focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block text-black bg-cyan-light_gray "
+                  className=" group relative  w-btn  p-3  m-2 pl-5 md:pl-14 lg:pl-8 xl:pl-3 2xl:pl-8     sm:w-2/5 text-left focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block text-black bg-cyan-light_gray "
                   placeholder="Custom"
                 />
               </div>
