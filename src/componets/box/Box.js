@@ -29,7 +29,7 @@ export default function Box() {
         setTotal(total);
         setTipC("");
       }
-      if (total.length >= 7 || TipAmount.length >= 7) {
+      if (total.length >= 9 || TipAmount.length >= 9) {
         let convert = parseFloat(Tip / 100);
         let TipAmount = ((bill * convert) / people).toExponential(2);
         let total = (
@@ -52,7 +52,7 @@ export default function Box() {
         setTotal(total);
         setTip("");
       }
-      if (total.length >= 7 || TipAmount.length >= 7) {
+      if (total.length >= 9 || TipAmount.length >= 9) {
         let convert = parseFloat(TipC / 100);
         let TipAmount = ((bill * convert) / people).toExponential(2);
         let total = (
@@ -149,7 +149,7 @@ export default function Box() {
                 />
               </div>
             </div>
-            <div className="flex-auto max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full rounded-3xl  mx-2   px-5 py-10   bg-cyan-dark ">
+            <div className="flex-auto max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full rounded-3xl  mx-1    px-5 py-10   bg-cyan-dark ">
               <div className="flex flex-col">
                 <div className="flex justify-between items-center ">
                   <div className="text-cyan-light_gray font-semibold ">
