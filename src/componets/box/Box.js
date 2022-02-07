@@ -29,17 +29,6 @@ export default function Box() {
         setTotal(total);
         setTipC("");
       }
-      if (total.length >= 9 || TipAmount.length >= 9) {
-        let convert = parseFloat(Tip / 100);
-        let TipAmount = ((bill * convert) / people).toExponential(2);
-        let total = (
-          (bill * convert + parseFloat(bill)) /
-          people
-        ).toExponential(2);
-        setTipAmount(TipAmount);
-        setTotal(total);
-        setTipC("");
-      }
     }
   }, [bill, Tip, people]);
   useEffect(() => {
@@ -48,17 +37,6 @@ export default function Box() {
         let convert = parseFloat(TipC / 100);
         let TipAmount = ((bill * convert) / people).toFixed(2);
         let total = ((bill * convert + parseFloat(bill)) / people).toFixed(2);
-        setTipAmount(TipAmount);
-        setTotal(total);
-        setTip("");
-      }
-      if (total.length >= 9 || TipAmount.length >= 9) {
-        let convert = parseFloat(TipC / 100);
-        let TipAmount = ((bill * convert) / people).toExponential(2);
-        let total = (
-          (bill * convert + parseFloat(bill)) /
-          people
-        ).toExponential(2);
         setTipAmount(TipAmount);
         setTotal(total);
         setTip("");
@@ -76,7 +54,7 @@ export default function Box() {
       </header>
       <main className="bg-cyan-light_gray_f py-16 2xl:py-16 xl:py-16 lg:py-0 md:py-0 sm:py-0">
         <div className=" flex justify-center font-black">
-          <div className="flex flex-auto flex-wrap px-7 py-7  rounded-3xl  shadow-lg bg-white  text-black     max-w-1/2  2xl:max-w-3/4 xl:max-w-3/4 lg:max-w-3/4 md:max-w-full sm:max-w-full">
+          <div className="flex flex-wrap px-7 py-7  rounded-3xl  shadow-lg bg-white  text-black     max-w-1/2  2xl:max-w-3/4 xl:max-w-3/4 lg:max-w-3/4 md:max-w-full sm:max-w-full">
             <div className="  flex-auto mx-auto  max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full">
               <label
                 htmlFor="bill"
@@ -93,6 +71,11 @@ export default function Box() {
                   step="any"
                   value={bill}
                   min="1"
+                  maxLength={7}
+                  onInput={(e) => {
+                    if (e.target.value.length > e.target.maxLength)
+                      e.target.value = e.target.value.slice(0, e.target.maxLength);
+                  }}
                   onChange={(e) => setBill(e.target.value)}
                   required
                   className="text-right group relative focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark border  font-semibold focus:border-transparent rounded-md block w-full px-3 py-2 mb-5 text-black bg-cyan-light_gray  "
@@ -156,7 +139,7 @@ export default function Box() {
                     Tip Amount
                     <span className="block text-cyan-dark_gray">/person</span>
                   </div>
-                  <div className="text-cyan-strong text-4xl font-bold">
+                  <div className="text-cyan-strong text-4xl xl:text-3xl lg:text-4xl md:text-4xl font-bold">
                     ${TipAmount === 0 ? "0.00" : TipAmount}
                   </div>
                 </div>
@@ -165,7 +148,7 @@ export default function Box() {
                     Total
                     <span className="block text-cyan-dark_gray">/person</span>
                   </div>
-                  <div className="text-cyan-strong text-4xl font-bold ">
+                  <div className="text-cyan-strong text-4xl xl:text-3xl lg:text-4xl md:text-4xl font-bold ">
                     ${total === 0 ? "0.00" : total}
                   </div>
                 </div>
