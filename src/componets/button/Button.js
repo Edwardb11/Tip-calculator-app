@@ -6,7 +6,7 @@ export function Button({ newContent, onClik }) {
     <button
       onClick={onClik}
       type="button"
-      className="text-center group relative text-2xl m-2 p-3  w-btn  sm:w-2/5 border-transparent font-black rounded-md bg-cyan-dark text-white hover:bg-cyan-strong hover:text-cyan-dark focus:bg-cyan-strong focus:text-cyan-dark "
+      className="text-center group relative text-2xl m-2 p-3  w-btn  sm:w-2/5  border-transparent font-black rounded-md bg-cyan-dark text-white hover:bg-cyan-strong hover:text-cyan-dark focus:bg-cyan-strong focus:text-cyan-dark "
     >
       {newContent + "%"}
     </button>

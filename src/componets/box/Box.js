@@ -76,9 +76,9 @@ export default function Box() {
       </header>
 
       <main className="bg-cyan-light_gray_f py-16 2xl:py-16 xl:py-16 lg:py-0 md:py-0 sm:py-0 ">
-        <div className="flex justify-center">
-          <div className="flex  flex-wrap px-7 py-7  rounded-3xl  shadow-lg bg-white  text-black    max-w-1/2  2xl:max-w-3/4 xl:max-w-3/4 lg:max-w-3/4 md:max-w-full sm:max-w-full">
-            <div className="flex-auto max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full mx-2 ">
+        <div className="flex justify-center relative">
+          <div className=" flex  flex-wrap px-7 py-7  rounded-3xl  shadow-lg  bg-white text-black    max-w-[678px] md:max-w-full sm:max-w-full  ">
+            <div className="flex-auto max-w-1/2  sm:max-w-full md:max-w-full mx-2  ">
               <label
                 htmlFor="bill"
                 className="block text-cyan-dark_gray font-semibold mb-2 sm:mb-0"
@@ -117,7 +117,7 @@ export default function Box() {
                   value={TipC}
                   maxLength="100"
                   onChange={(e) => setTipC(e.target.value)}
-                  className=" group relative  w-btn  p-3  m-2 pl-5 md:pl-14 lg:pl-8 xl:pl-3 2xl:pl-8     sm:w-2/5 text-left focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block text-black bg-cyan-light_gray "
+                  className=" group relative  w-btn  p-3  m-2 pl-5 md:pl-14 lg:pl-8 xl:pl-7 2xl:pl-8 sm:pl-5   sm:w-2/5 text-left focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block text-black bg-cyan-light_gray "
                   placeholder="Custom"
                 />
               </div>
@@ -150,14 +150,14 @@ export default function Box() {
                 />
               </div>
             </div>
-            <div className="flex-auto max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full rounded-3xl mx-auto px-5 py-10   bg-cyan-dark ">
+            <div className="flex-auto max-w-1/2 sm:max-w-full  md:max-w-full  rounded-3xl lg:-mx-2 mx-2 px-5 py-10  bg-cyan-dark ">
               <div className="flex flex-col">
                 <div className="flex justify-between items-center ">
                   <div className="text-cyan-light_gray font-semibold ">
                     Tip Amount
                     <span className="block text-cyan-dark_gray">/person</span>
                   </div>
-                  <div className="text-cyan-strong text-4xl xl:text-3xl lg:text-4xl md:text-4xl font-bold">
+                  <div className="text-cyan-strong text-4xl font-bold ">
                     ${TipAmount === 0 ? "0.00" : TipAmount}
                   </div>
                 </div>
@@ -166,7 +166,7 @@ export default function Box() {
                     Total
                     <span className="block text-cyan-dark_gray">/person</span>
                   </div>
-                  <div className="text-cyan-strong text-4xl xl:text-3xl lg:text-4xl md:text-4xl font-bold ">
+                  <div className="text-cyan-strong text-4xl font-bold ">
                     ${total === 0 ? "0.00" : total}
                   </div>
                 </div>
