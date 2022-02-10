@@ -23,8 +23,19 @@ export default function Box() {
     if (Tip) {
       if (Tip && bill && people > 0) {
         let convert = parseFloat(Tip / 100);
-        let TipAmount = (bill * convert) / people;
-        let total = (bill * convert + parseFloat(bill)) / people;
+        let TipAmount = ((bill * convert) / people).toFixed(2);
+        let total = ((bill * convert + parseFloat(bill)) / people).toFixed(2);
+        setTipAmount(TipAmount);
+        setTotal(total);
+        setTipC("");
+      }
+      if (bill.length >= 10) {
+        let convert = parseFloat(Tip / 100);
+        let TipAmount = ((bill * convert) / people).toExponential(1);
+        let total = (
+          (bill * convert + parseFloat(bill)) /
+          people
+        ).toExponential(1);
         setTipAmount(TipAmount);
         setTotal(total);
         setTipC("");
@@ -33,10 +44,21 @@ export default function Box() {
   }, [bill, Tip, people]);
   useEffect(() => {
     if (TipC) {
-      if (TipC && bill && people > 0) {
+      if (TipC && bill && people > 10) {
         let convert = parseFloat(TipC / 100);
-        let TipAmount = (bill * convert) / people;
-        let total = (bill * convert + parseFloat(bill)) / people;
+        let TipAmount = ((bill * convert) / people).toFixed(2);
+        let total = ((bill * convert + parseFloat(bill)) / people).toFixed(2);
+        setTipAmount(TipAmount);
+        setTotal(total);
+        setTip("");
+      }
+      if (bill.length >= 9) {
+        let convert = parseFloat(TipC / 100);
+        let TipAmount = ((bill * convert) / people).toExponential(1);
+        let total = (
+          (bill * convert + parseFloat(bill)) /
+          people
+        ).toExponential(1);
         setTipAmount(TipAmount);
         setTotal(total);
         setTip("");
@@ -45,17 +67,18 @@ export default function Box() {
   }, [bill, TipC, people]);
 
   return (
-    <div className="h-min-screen bg-cyan-light_gray_f  ">
-      <header className="mx-auto py-12 2xl:py-12 xl:py-12 lg:py-12 md:py-5 sm:py-0">
+    <div className="h-screen bg-cyan-light_gray_f  ">
+      <header className="mx-auto py-16 2xl:py-16 xl:py-16 lg:py-12 md:py-5 sm:py-0">
         <h1 className="text-cyan-title mx-auto font-semibold  text-center  text-2xl tracking-widest uppercase">
           spli <br />
           tter
         </h1>
       </header>
-      <main>
-        <div className=" flex justify-center font-black">
-          <div className="flex flex-auto flex-wrap px-7 py-7  rounded-3xl  shadow-lg bg-white  text-black     max-w-1/2  2xl:max-w-3/4 xl:max-w-3/4 lg:max-w-3/4 md:max-w-full sm:max-w-full">
-            <div className="  flex-auto mx-2  max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full">
+
+      <main className="bg-cyan-light_gray_f py-16 2xl:py-16 xl:py-16 lg:py-0 md:py-0 sm:py-0 ">
+        <div className="flex justify-center relative">
+          <div className="fixed flex  flex-wrap px-7 py-7  rounded-3xl  shadow-lg  bg-white text-black    max-w-[50%] md:max-w-full sm:max-w-full  ">
+            <div className="flex-auto max-w-1/2  sm:max-w-full md:max-w-full mx-2  ">
               <label
                 htmlFor="bill"
                 className="block text-cyan-dark_gray font-semibold mb-2 sm:mb-0"
@@ -70,7 +93,7 @@ export default function Box() {
                   type="number"
                   step="any"
                   value={bill}
-                  min="1"
+                  min="0"
                   onChange={(e) => setBill(e.target.value)}
                   required
                   className="text-right group relative focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark border  font-semibold focus:border-transparent rounded-md block w-full px-3 py-2 mb-5 text-black bg-cyan-light_gray  "
@@ -93,8 +116,9 @@ export default function Box() {
                   min="1"
                   value={TipC}
                   maxLength="100"
+                  max={100}
                   onChange={(e) => setTipC(e.target.value)}
-                  className=" group relative  w-btn m-2 p-3  sm:w-2/5 text-left focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block text-black bg-cyan-light_gray "
+                  className=" group relative  w-btn  p-3  m-2 pl-5 md:pl-14 lg:pl-8 xl:pl-7 2xl:pl-8 sm:pl-5   sm:w-2/5 text-left focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block text-black bg-cyan-light_gray "
                   placeholder="Custom"
                 />
               </div>
@@ -127,15 +151,15 @@ export default function Box() {
                 />
               </div>
             </div>
-            <div className="flex-auto max-w-1/2 2xl:max-w-1/2 xl:max-w-1/2 lg:max-w-full md:max-w-full sm:max-w-full rounded-3xl  mx-2   px-5 py-10   bg-cyan-dark ">
+            <div className="flex-auto max-w-1/2 sm:max-w-full  md:max-w-full  rounded-3xl lg:-mx-2 mx-2 px-5 py-10  bg-cyan-dark ">
               <div className="flex flex-col">
                 <div className="flex justify-between items-center ">
                   <div className="text-cyan-light_gray font-semibold ">
                     Tip Amount
                     <span className="block text-cyan-dark_gray">/person</span>
                   </div>
-                  <div className="text-cyan-strong text-5xl overflow-x-auto overflow-y-hidden  font-bold  w-44 ">
-                    ${TipAmount === 0 ? "0.00" : TipAmount.toFixed(2)}
+                  <div className="text-cyan-strong text-4xl font-bold ">
+                    ${TipAmount === 0 ? "0.00" : TipAmount}
                   </div>
                 </div>
                 <div className="flex justify-between items-center my-5">
@@ -143,8 +167,8 @@ export default function Box() {
                     Total
                     <span className="block text-cyan-dark_gray">/person</span>
                   </div>
-                  <div className="text-cyan-strong text-5xl font-bold overflow-x-auto overflow-y-hidden w-44  ">
-                    ${total === 0 ? "0.00" : total.toFixed(2)}
+                  <div className="text-cyan-strong text-4xl font-bold ">
+                    ${total === 0 ? "0.00" : total}
                   </div>
                 </div>
               </div>
