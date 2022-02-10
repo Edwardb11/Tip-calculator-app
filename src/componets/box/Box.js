@@ -116,7 +116,7 @@ export default function Box() {
                   min="1"
                   value={TipC}
                   maxLength="100"
-                  max
+                  max={100}
                   onChange={(e) => setTipC(e.target.value)}
                   className=" group relative  w-btn  p-3  m-2 pl-5 md:pl-14 lg:pl-8 xl:pl-7 2xl:pl-8 sm:pl-5   sm:w-2/5 text-left focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block text-black bg-cyan-light_gray "
                   placeholder="Custom"
