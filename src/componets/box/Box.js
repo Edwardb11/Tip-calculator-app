@@ -29,7 +29,7 @@ export default function Box() {
         setTotal(total);
         setTipC("");
       }
-      if (bill.length >= 9) {
+      if (bill.length >= 10) {
         let convert = parseFloat(Tip / 100);
         let TipAmount = ((bill * convert) / people).toExponential(1);
         let total = (
@@ -44,7 +44,7 @@ export default function Box() {
   }, [bill, Tip, people]);
   useEffect(() => {
     if (TipC) {
-      if (TipC && bill && people > 0) {
+      if (TipC && bill && people > 10) {
         let convert = parseFloat(TipC / 100);
         let TipAmount = ((bill * convert) / people).toFixed(2);
         let total = ((bill * convert + parseFloat(bill)) / people).toFixed(2);
@@ -77,7 +77,7 @@ export default function Box() {
 
       <main className="bg-cyan-light_gray_f py-16 2xl:py-16 xl:py-16 lg:py-0 md:py-0 sm:py-0 ">
         <div className="flex justify-center relative">
-          <div className=" flex  flex-wrap px-7 py-7  rounded-3xl  shadow-lg  bg-white text-black    max-w-[678px] md:max-w-full sm:max-w-full  ">
+          <div className="fixed flex  flex-wrap px-7 py-7  rounded-3xl  shadow-lg  bg-white text-black    max-w-[50%] md:max-w-full sm:max-w-full  ">
             <div className="flex-auto max-w-1/2  sm:max-w-full md:max-w-full mx-2  ">
               <label
                 htmlFor="bill"
@@ -116,6 +116,7 @@ export default function Box() {
                   min="1"
                   value={TipC}
                   maxLength="100"
+                  max
                   onChange={(e) => setTipC(e.target.value)}
                   className=" group relative  w-btn  p-3  m-2 pl-5 md:pl-14 lg:pl-8 xl:pl-7 2xl:pl-8 sm:pl-5   sm:w-2/5 text-left focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block text-black bg-cyan-light_gray "
                   placeholder="Custom"
