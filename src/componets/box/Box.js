@@ -76,7 +76,7 @@ export default function Box() {
       </header>
 
       <main className="bg-cyan-light_gray_f py-16 2xl:py-16 xl:py-16 lg:py-0 md:py-0 sm:py-0 ">
-        <div className="flex justify-center relative">
+        <div className="flex justify-center ">
           <div className="fixed flex  flex-wrap px-7 py-7  rounded-3xl  shadow-lg  bg-white text-black    max-w-[50%] md:max-w-full sm:max-w-full  ">
             <div className="flex-auto max-w-1/2  sm:max-w-full md:max-w-full mx-2  ">
               <label
@@ -118,7 +118,7 @@ export default function Box() {
                   maxLength="100"
                   max={100}
                   onChange={(e) => setTipC(e.target.value)}
-                  className=" group relative  w-btn  p-3  m-2 pl-5 md:pl-14 lg:pl-8 xl:pl-7 2xl:pl-8 sm:pl-5   sm:w-2/5 text-left focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block text-black bg-cyan-light_gray "
+                  className=" group relative  w-btn  p-3  m-2 pl-2 md:pl-14 lg:pl-1 xl:pl-3 2xl:pl-1 sm:pl-5   sm:w-2/5 text-left focus:outline-none  text-2xl focus:ring-2 focus:ring-cyan-dark   font-semibold focus:border-transparent rounded-md block text-black bg-cyan-light_gray "
                   placeholder="Custom"
                 />
               </div>
@@ -183,25 +183,29 @@ export default function Box() {
             </div>
           </div>
         </div>
-        <div className="flex justify-center tracking-wide  text-center  ">
-          <p>
-            Challenge by<span> </span>
-            <a
-              href="https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX"
-              target="_blank"
-              className="text-blue-800  "
-            >
-              Frontend Mentor.<span> </span>
-            </a>
-            Coded by 👑
-            <a
-              href="https://github.com/Edwardb11/Tip-calculator-app"
-              target="_blank"
-              className="text-blue-800  "
-            >
-              Edwardb11👑
-            </a>
-          </p>
+
+        <div className="  flex justify-center tracking-wide  text-center   mt-96         ">
+          <br></br>
+          <div className="    mt-28 sm:mt-96   md:mt-96      ">
+            <p className="sm:mt-4   md:mt-3 ">
+              Challenge by<span> </span>
+              <a
+                href="https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX"
+                target="_blank"
+                className="text-blue-800  "
+              >
+                Frontend Mentor.<span> </span>
+              </a>
+              Coded by 👑
+              <a
+                href="https://github.com/Edwardb11/Tip-calculator-app"
+                target="_blank"
+                className="text-blue-800  "
+              >
+                Edwardb11👑
+              </a>
+            </p>
+          </div>
         </div>
       </main>
     </div>
